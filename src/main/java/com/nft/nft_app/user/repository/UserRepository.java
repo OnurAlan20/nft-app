@@ -10,7 +10,6 @@ import java.util.Optional;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-    Optional<User> findByEmail(String email);
 
     @EntityGraph(attributePaths = {
             "nftList",
@@ -18,7 +17,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
             "commentList",
             "topicList"
     })
-    Optional<User> findWithRelationsByEmail(String email);
-
+    Optional<User> findByEmail(String email);
 
 }
