@@ -44,21 +44,7 @@ public class TopicService {
 
     public List<TopicResponse> getAllTopics() {
         return topicRepository.findAll().stream()
-                .map(topic -> {
-                    int likeCount = (int) likeRepository.countByTopic(topic);
-                    int commentCount = commentRepository.findByTopicId(topic.getId()).size();
-                    return new TopicResponse(topic, likeCount, commentCount);
-                })
-                .collect(Collectors.toList());
-    }
-
-    public List<TopicResponse> getTopicsByType(TopicTur topicTur) {
-        return topicRepository.findByTopicTur(topicTur).stream()
-                .map(topic -> {
-                    int likeCount = (int) likeRepository.countByTopic(topic);
-                    int commentCount = commentRepository.findByTopicId(topic.getId()).size();
-                    return new TopicResponse(topic, likeCount, commentCount);
-                })
+                .map(topic -> new TopicResponse(topic, topic.getLikeCount(), topic.getCommentList().size()))
                 .collect(Collectors.toList());
     }
 
@@ -66,9 +52,14 @@ public class TopicService {
         Topic topic = topicRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Topic not found with id: " + id));
 
-        int likeCount = (int) likeRepository.countByTopic(topic);
-        int commentCount = commentRepository.findByTopicId(topic.getId()).size();
+        return new TopicResponse(topic, topic.getLikeCount(), topic.getCommentList().size());
+    }
 
-        return new TopicResponse(topic, likeCount, commentCount);
+    public List<TopicResponse> getTopicsByType(TopicTur topicTur) {
+        return topicRepository.findByTopicTur(topicTur).stream()
+                .map(topic -> {
+                    return new TopicResponse(topic, topic.getLikeCount(), topic.getCommentList().size());
+                })
+                .collect(Collectors.toList());
     }
 }

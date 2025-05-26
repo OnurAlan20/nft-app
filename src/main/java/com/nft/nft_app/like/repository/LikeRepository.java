@@ -6,6 +6,8 @@ import com.nft.nft_app.topic.entity.Topic;
 import com.nft.nft_app.user.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.Optional;
+
 public interface LikeRepository extends JpaRepository<Like, Long> {
 
     // Beğeni var mı kontrolü için
@@ -15,5 +17,9 @@ public interface LikeRepository extends JpaRepository<Like, Long> {
     // Sayım için
     long countByTopic(Topic topic);
     long countByComment(Comment comment);
+
+    Optional<Like> findByUserAndTopic(User user, Topic topic);
+    Optional<Like> findByUserAndComment(User user, Comment comment);
+
 
 }

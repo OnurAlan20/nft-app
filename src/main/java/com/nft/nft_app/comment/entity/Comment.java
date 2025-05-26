@@ -25,5 +25,8 @@ public class Comment extends BaseEntity {
     @OneToMany(mappedBy = "comment", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Like> likeList = new ArrayList<>();
 
+    @Column(name = "like_count")
+    private int likeCount = 0;
+
     private String comment;
 }

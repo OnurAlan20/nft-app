@@ -42,7 +42,7 @@ public class CommentService {
     public List<CommentResponse> getCommentsByTopic(Long topicId) {
         return commentRepository.findByTopicId(topicId)
                 .stream()
-                .map(comment -> new CommentResponse(comment, (int) likeRepository.countByComment(comment)))
+                .map(comment -> new CommentResponse(comment, comment.getLikeCount()))
                 .collect(Collectors.toList());
     }
 }
