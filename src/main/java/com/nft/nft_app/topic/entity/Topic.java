@@ -1,10 +1,8 @@
 package com.nft.nft_app.topic.entity;
 
-import com.nft.nft_app.Like.entity.Like;
+import com.nft.nft_app.like.entity.Like;
 import com.nft.nft_app.comment.entity.Comment;
-import com.nft.nft_app.common.entity.BaseEntity;
-import com.nft.nft_app.nft.entity.Nft;
-import com.nft.nft_app.nft.enums.NftDurum;
+import com.nft.nft_app.common.BaseEntity;
 import com.nft.nft_app.topic.enums.TopicTur;
 import com.nft.nft_app.user.entity.User;
 import jakarta.persistence.*;
@@ -25,7 +23,7 @@ public class Topic extends BaseEntity {
     private TopicTur topicTur;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     @OneToMany(mappedBy = "topic", cascade = CascadeType.ALL, orphanRemoval = true)

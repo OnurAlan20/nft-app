@@ -1,7 +1,7 @@
 package com.nft.nft_app.nft.entity;
 
 
-import com.nft.nft_app.common.entity.BaseEntity;
+import com.nft.nft_app.common.BaseEntity;
 import com.nft.nft_app.nft.enums.NftBlockChain;
 import com.nft.nft_app.nft.enums.NftDurum;
 import com.nft.nft_app.nft.enums.NftKatogori;

@@ -1,8 +1,8 @@
 package com.nft.nft_app.user.entity;
 
-import com.nft.nft_app.Like.entity.Like;
+import com.nft.nft_app.like.entity.Like;
 import com.nft.nft_app.comment.entity.Comment;
-import com.nft.nft_app.common.entity.BaseEntity;
+import com.nft.nft_app.common.BaseEntity;
 import com.nft.nft_app.nft.entity.Nft;
 import com.nft.nft_app.topic.entity.Topic;
 import jakarta.persistence.*;

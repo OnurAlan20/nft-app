@@ -1,4 +1,4 @@
-package com.nft.nft_app.common.entity;
+package com.nft.nft_app.common;
 
 import jakarta.persistence.*;
 import lombok.Getter;
