@@ -29,7 +29,7 @@ public class ProfileGetUserDTO {
         this.nftCount = (long) user.getNftList().size();
         this.topicCount = (long) user.getTopicList().size();
         this.commentCount = (long) user.getTopicList().size();
-        this.userName = user.getUsername();
+        this.userName = user.getRealUsername();
         this.email = user.getEmail();
     }
 }

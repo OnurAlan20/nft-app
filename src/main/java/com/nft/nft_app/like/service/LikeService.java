@@ -98,4 +98,13 @@ public class LikeService {
             commentRepository.save(comment);
         }
     }
+
+    public boolean isTopicLikedByUser(User user, Long topicId) {
+        return likeRepository.existsByUserIdAndTopicId(user.getId(), topicId);
+    }
+
+    public boolean isCommentLikedByUser(User user, Long commentId) {
+        return likeRepository.existsByUserIdAndCommentId(user.getId(), commentId);
+    }
+
 }

@@ -5,6 +5,7 @@ import com.nft.nft_app.comment.entity.Comment;
 import com.nft.nft_app.common.BaseEntity;
 import com.nft.nft_app.nft.entity.Nft;
 import com.nft.nft_app.topic.entity.Topic;
+import com.nft.nft_app.user.dto.UpdateUserProfileDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -62,6 +63,10 @@ public class User extends BaseEntity implements UserDetails {
     @Override
     public String getUsername() {
         return email;
+    }
+
+    public String getRealUsername() {
+        return username;
     }
 
     public void setUsername(String username){

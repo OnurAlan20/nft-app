@@ -6,5 +6,10 @@ import lombok.Data;
 public class LoginUserDto {
     private String email;
 
+    public LoginUserDto(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
+
     private String password;
 }

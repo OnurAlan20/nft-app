@@ -3,7 +3,7 @@ package com.nft.nft_app.nft.entity;
 
 import com.nft.nft_app.common.BaseEntity;
 import com.nft.nft_app.nft.enums.NftBlockChain;
-import com.nft.nft_app.nft.enums.NftDurum;
+import com.nft.nft_app.nft.enums.NftStatus;
 import com.nft.nft_app.nft.enums.NftKatogori;
 import com.nft.nft_app.nft.enums.NftTur;
 import com.nft.nft_app.user.entity.User;
@@ -21,7 +21,7 @@ public class Nft extends BaseEntity {
     private String description;
 
     @Enumerated(EnumType.STRING)
-    private NftDurum nftDurum;
+    private NftStatus nftStatus;
 
     @Enumerated(EnumType.STRING)
     private NftTur nftTur;
