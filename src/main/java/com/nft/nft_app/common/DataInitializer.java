@@ -44,8 +44,8 @@ public class DataInitializer {
             user1.setFirstName("Leonardo");
             user1.setLastName("da Vinci");
             user1.setUsername("leonardo");
-            user1.setEmail("leo@nft.com");
-            user1.setPassword(passwordEncoder.encode("123456"));
+            user1.setEmail("onur@gmail.com");
+            user1.setPassword(passwordEncoder.encode("x1x2x3x4x5x6"));
             user1.setRoles(List.of("USER"));
 
             User user2 = new User();
